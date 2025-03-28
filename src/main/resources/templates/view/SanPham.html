@@ -241,6 +241,17 @@
                 display: block;
                 overflow-x: auto;
             }
+
+            table td a {
+                text-decoration: none;
+                color: inherit; /* Giữ nguyên màu chữ theo nội dung */
+                font-weight: 500;
+            }
+
+            table td a:hover {
+                text-decoration: underline; /* Có thể giữ hiệu ứng gạch chân khi hover nếu muốn */
+                color: var(--primary-color);
+            }
         }
     </style>
 </head>
@@ -279,10 +290,11 @@
                     <th>Thao Tác</th>
                 </tr>
                 </thead>
+
                 <tbody>
                 <tr>
                     <td>1</td>
-                    <td>Thức ăn cho chó</td>
+                    <td><a href="chiTietSanPham/thucAnChoCho.html" >Thức ăn cho chó</a></td>
                     <td>Thức ăn</td>
                     <td class="price">50.000 VNĐ</td>
                     <td>100</td>
@@ -292,7 +304,7 @@
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>Lồng nuôi chim</td>
+                    <td><a href="chiTietSanPham/LongNuoiChim.html" >Lồng nuôi chim</a></td>
                     <td>Phụ kiện</td>
                     <td class="price">200.000 VNĐ</td>
                     <td>50</td>
@@ -302,7 +314,7 @@
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>Vòng cổ cho mèo</td>
+                    <td><a href="chiTietSanPham/VongCoMeo.html" >Vòng cổ cho mèo</a></td>
                     <td>Phụ kiện</td>
                     <td class="price">75.000 VNĐ</td>
                     <td>80</td>

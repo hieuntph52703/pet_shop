@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th=“http://www.thymeleaf.org”>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -282,7 +283,7 @@
             <button class="btn btn-primary">Tạo Đơn Hàng</button>
         </div>
         <div class="card-body">
-            <table>
+            <table border="1">
                 <thead>
                 <tr>
                     <th>Mã ĐH</th>
@@ -293,45 +294,31 @@
                     <th>Thao Tác</th>
                 </tr>
                 </thead>
+
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Nguyễn Văn A</td>
-                    <td>Phạm Văn D</td>
-                    <td>20/03/2025</td>
-                    <td class="price">8.050.000 VNĐ</td>
+                <tr th:each="dh, i : ${listDH}">
+                    <td th:text="${dh.maDonHang}"></td>
+                    <td th:text="${dh.KhachHang.tenKhachHang}"></td>
+                    <td th:text="${dh.NhanVien.tenNhanVien}"></td>
+                    <td th:text="${dh.ngayDat}"></td>
+                    <td th:text="${dh.tongTien}"></td>
                     <td>
-                        <button class="btn btn-primary">Chi Tiết</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Trần Thị B</td>
-                    <td>Hoàng Thị E</td>
-                    <td>21/03/2025</td>
-                    <td class="price">1.500.000 VNĐ</td>
-                    <td>
-                        <button class="btn btn-primary">Chi Tiết</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Lê Hoàng C</td>
-                    <td>Phạm Văn D</td>
-                    <td>22/03/2025</td>
-                    <td class="price">275.000 VNĐ</td>
-                    <td>
-                        <button class="btn btn-primary">Chi Tiết</button>
+                        <a>Chi tiết</a>
+<!--                        th:href="@{/don_hang/chi_tiet/{maDonHang}(maDonHang=${dh.maDonHang})}"-->
                     </td>
                 </tr>
                 </tbody>
             </table>
+
         </div>
     </div>
 
+
+
+
     <div class="card">
         <div class="card-header">
-            <div class="card-title">Chi Tiết Đơn Hàng #1</div>
+            <div class="card-title">Chi Tiết Đơn Hàng </div>
         </div>
         <div class="card-body">
             <div class="form-row">
